@@ -29,7 +29,11 @@
 (setq display-line-numbers-type 'relative)
 ; （可选）显示相对行号
 (fset 'yes-or-no-p 'y-or-n-p)
-; 设置别名
+; 设置别名（yes/no）
+(setq-default fill-column 80)
+; 设置默认到80行就自动折行
+(add-hook 'after-init-hook 'global-display-fill-column-indicator-mode)
+; 在第80行设置一个标尺（一条竖线）提示不要越过它
 
 ;(setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 8

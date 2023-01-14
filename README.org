@@ -1,0 +1,40 @@
+#+author: Youlanjie
+#+title: 我的乐色Emacs配置
+
+* 关于这个配置文件
+不要觉得这是一个很好的Emacs配置，这只是我自己学习使用Emacs的时候依据自己的需求东
+拼西凑出来的超级缝合怪。所以说不要把这些配置当做教科书式的配置。不过我认为我的这
+些配置都还是挺通俗易懂的，毕竟很多功能都有相应的注释 +因为这些东西都是抄来的+ 所
+以说我的这份配置，或许能够帮你
+
+* 关于安装
+这我没有什么可说的，你只需要简简单单地下载这个仓库并将其命名为你的emacs配置目录
+（建议是 =~/.emacs.d/=）
+
+* 一些说明
+** 安装的插件
+我的插件设置均存放在 =lisp/init-package.el= 文件里，均使用了 /use-package/ 宏作
+为插件的管理，应当是相当易读的。这里列出一些：
+1. evil
+2. which-key
+3. smooth-scrolling
+4. company
+5. yasnippet
+6. yasnippet-snippets
+7. flycheck
+8. lsp-mode
+9. magit
+上面的插件并不全面，但已经覆盖了大部分的功能性插件
+** 文件的作用
+| 文件名                         | 作用                                                        |
+| <l>                            | <l>                                                         |
+|--------------------------------+-------------------------------------------------------------|
+| =init.el=                      | 所有配置的入口                                              |
+| =custom.el=                    | 通过customize接口生成的配置                                 |
+| =lisp/init-better-defaults.el= | 更好的默认设置                                              |
+| =lisp/init-ui.el=              | 关于UI的设置                                                |
+| =lisp/init-kdybindings.el=     | 关于键盘绑定设置                                            |
+| =lisp/init-packages.el=        | 关于插件的安装、设置                                        |
+| =lisp/init-org.el=             | 关于org-mode的设置                                          |
+| =lisp/init-auto-insert.el=     | 新文件自动插入文件头的配置（模板在 =auto-insert= 文件夹下） |
+
