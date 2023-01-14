@@ -1,0 +1,17 @@
+/*
+ *   Copyright (C) `(format-time-string "%Y")` YouLanjie
+ *
+ *   文件名称：`(file-name-nondirectory (buffer-file-name))`
+ *   创 建 者：youlanjie
+ *   创建日期：`(format-time-string "%Y年%m月%d日")`
+ *   描    述：`(read-string "Please input describe:")`
+ *
+ */
+
+#ifndef `(upcase (file-name-nondirectory (file-name-sans-extension (or (buffer-file-name) ""))))`_H
+#define `(upcase (file-name-nondirectory (file-name-sans-extension (or (buffer-file-name) ""))))`_H
+
+$0
+
+#endif
+
