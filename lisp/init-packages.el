@@ -85,7 +85,7 @@
   (define-key yas-minor-mode-map (kbd "TAB")    nil)
   (define-key yas-minor-mode-map (kbd "<tab>")  nil)
   ;; 配置模板
-  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "~/.emacs.d/auto-insert/"))
+  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "~/.emacs.d/snippets/"))
   :bind
   (:map yas-minor-mode-map ("S-<tab>" . yas-expand)))
 ; 默认补全模板

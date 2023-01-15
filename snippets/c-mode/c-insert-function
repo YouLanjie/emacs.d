@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: C插入函数
+# key: function
+# --
+/*
+ * $1
+ */
+${2:int} ${3:name} (${4:int} ${5:var})
+{
+	$0
+	return ${6:0};
+}

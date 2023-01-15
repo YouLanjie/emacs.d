@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: C插入else if
+# key: elif
+# --
+else if ($1) {
+	$0
+}

@@ -15,14 +15,6 @@
 
 ;;key for initialize file
 
-(defun open-GTD-file()
-  "打开GTD文件."
-  (interactive)
-  (split-window-right)
-  (find-file "~/.emacs.d/org-files/GTD.org"))
-
-(global-set-key (kbd "<f9>") 'open-GTD-file)
-
 (provide 'init-org)
 
 ;;; init-org.el ends here

@@ -9,7 +9,8 @@
 (defun open-config-files()
   "打开指定的配置文件."
   (interactive)
-  (let ((choices '("~/.emacs.d/init.el"
+  (let ((choices '("~/.emacs.d/org-files/GTD.org"
+		   "~/.emacs.d/init.el"
 		   "~/.emacs.d/custom.el"
 		   "~/.emacs.d/lisp/init-keybindings.el"
 		   "~/.emacs.d/lisp/init-packages.el"
@@ -25,7 +26,7 @@
     (switch-to-buffer "*FileList*")
     (erase-buffer)
     (mapc (lambda (filename)
-	    (insert (int-to-string (+ local-num 1)) filename "\n")
+	    (insert (int-to-string (+ local-num 1)) " " filename "\n")
 	    (setq-local local-num (+ local-num 1)))
 	    choices)
     (setq-local local-num (read-number "Which you want to open?" 1))
