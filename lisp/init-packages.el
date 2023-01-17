@@ -10,6 +10,8 @@
   ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
   ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 (package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 (eval-and-compile
   (setq use-package-always-ensure t)    ;不用每个包都手动添加:ensure t关键字
   (setq use-package-always-defer t)     ;默认都是延迟加载，不用每个包都手动添加:defer t
@@ -125,6 +127,8 @@
   :config
     (setq lsp-completion-provider :none) ;; 阻止 lsp 重新设置 company-backend 而覆盖我们 yasnippet 的设置
     (setq lsp-headerline-breadcrumb-enable t))
+; org转markdown
+(use-package ox-hugo)
 ; Undo tree解决emacs的撤回痛点（卡顿大）
 ;(use-package undo-tree
 ;  :ensure t

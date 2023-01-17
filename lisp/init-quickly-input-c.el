@@ -29,6 +29,14 @@
  '(lambda ()
     "设置C语言的补全插入功能"
 
+    ;; 设置C-c l为注释按键
+    (local-set-key
+     (kbd "C-c l")
+     '(lambda ()
+	(interactive)
+	(comment-line 1)
+	(previous-line)))
+
     ;; 在上一行插入注释
     (local-set-key
      (kbd "] /")

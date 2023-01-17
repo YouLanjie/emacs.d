@@ -35,13 +35,14 @@
  ;; If there is more than one, they won't work right.
  '(c-tab-always-indent t)
  '(custom-buffer-indent 8)
- '(custom-safe-themes
-   '("496c40b4a34c441d71d537deebbaa288aa6d3762b9ff366535364d5bd6a69e22" "81eedac030249f826681ab768953f5b0f671d4b069bd6c9c486f762644b24d7c" default))
+ '(display-line-numbers-type 'relative)
  '(evil-indent-convert-tabs t)
- '(face-font-family-alternatives '(("JetBrains Mono" "AR PL KaitiM GB")))
+ '(local-auto-save-idle 7)
+ '(local-open-files-enable t)
+ '(local-open-files-list
+   '("~/.emacs.d/org-files/GTD.org" "~/.emacs.d/init.el" "~/.emacs.d/custom.el" "~/.emacs.d/lisp/init-keybindings.el" "~/.emacs.d/lisp/init-packages.el" "~/.emacs.d/lisp/init-better-defaults.el" "~/.emacs.d/lisp/init-ui.el" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-quickly-input-c.el" "~/.emacs.d/lisp/init-auto-save.el"))
  '(org-agenda-files '("/home/youlanjie/.emacs.d/org-files/GTD.org"))
- '(package-selected-packages
-   '(yaml-mode flycheck-clang-analyzer org-ehtml org-bullets yasnippet-snippets which-key valign use-package smooth-scrolling smart-mode-line powerline-evil magit flycheck company-box benchmark-init atom-one-dark-theme atom-dark-theme airline-themes))
+ '(org-export-backends '(ascii html man md odt texinfo groff))
  '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -5,8 +5,8 @@
 /*
  * $1
  */
-${2:int} ${3:name} (${4:int} ${5:var})
+${2:int} ${3:name} (${4:void})
 {
 	$0
-	return ${6:0};
+	return ${5:0};
 }

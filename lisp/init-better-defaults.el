@@ -26,14 +26,16 @@
 ; 高亮当前行
 (savehist-mode 1)
 ; （可选）打开 Buffer 历史记录保存
-(setq display-line-numbers-type 'relative)
-; （可选）显示相对行号
+; (setq display-line-numbers-type 'relative)
+; （可选）显示相对行号（可在custonize中设置，见custom.el）
 (fset 'yes-or-no-p 'y-or-n-p)
 ; 设置别名（yes/no）
 (setq-default fill-column 80)
 ; 设置默认到80行就自动折行
 (add-hook 'after-init-hook 'global-display-fill-column-indicator-mode)
 ; 在第80行设置一个标尺（一条竖线）提示不要越过它
+(setq org-src-fontify-natively t)
+; 设置org高亮代码块
 
 ;(setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 8

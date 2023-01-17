@@ -9,6 +9,7 @@
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file 'no-error 'no-message)
 
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 ; 设定源码加载路径
 
@@ -19,6 +20,8 @@
 (require 'init-org)
 (require 'init-auto-insert)
 (require 'init-quickly-input-c)
+(require 'init-auto-save)
+(require 'init-open-files)
 ; 加载模块
 
 ;;; init.el ends here
