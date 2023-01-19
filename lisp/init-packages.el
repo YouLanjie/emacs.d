@@ -127,8 +127,8 @@
   :config
     (setq lsp-completion-provider :none) ;; 阻止 lsp 重新设置 company-backend 而覆盖我们 yasnippet 的设置
     (setq lsp-headerline-breadcrumb-enable t))
-; org转markdown
-(use-package ox-hugo)
+;; Org图表绘图
+(use-package gnuplot)
 ; Undo tree解决emacs的撤回痛点（卡顿大）
 ;(use-package undo-tree
 ;  :ensure t
@@ -138,8 +138,6 @@
 (use-package magit
   :ensure t)
 (use-package org
-  :ensure t)
-(use-package org-ehtml
   :ensure t)
 (use-package valign
   :ensure t

@@ -24,18 +24,20 @@
 | 文件名                         | 作用                                                        |
 |--------------------------------+-------------------------------------------------------------|
 | =init.el=                      | 所有配置的入口                                              |
-| =custom.el=                    | 通过customize接口生成的配置                                 |
-| =lisp/init-better-defaults.el= | 更好的默认设置                                              |
-| =lisp/init-ui.el=              | 关于UI的设置                                                |
-| =lisp/init-keybindings.el=     | 关于键盘绑定设置                                            |
-| =lisp/init-packages.el=        | 关于插件的安装、设置                                        |
-| =lisp/init-org.el=             | 关于org-mode的设置                                          |
 | =lisp/init-auto-insert.el=     | 新文件自动插入文件头的配置（模板在 =auto-insert= 文件夹下） |
+| =lisp/init-auto-save.el=       | 自动保存插件                                                |
+| =lisp/init-better-defaults.el= | 更好的默认设置                                              |
+| =lisp/custom.el=               | 通过customize接口生成的配置                                 |
+| =lisp/init-keybindings.el=     | 关于键盘绑定设置                                            |
+| =lisp/init-open-files.el=      | 快速打开文件插件                                            |
+| =lisp/init-org.el=             | 关于org-mode的设置                                          |
+| =lisp/init-packages.el=        | 关于插件的安装、设置                                        |
 | =lisp/init-quickly-input-c.el= | 设置C语言部分快捷输入快捷键                                 |
+| =lisp/init-ui.el=              | 关于UI的设置                                                |
 ** 一些我配置的提示
 1. 我在编辑器的第80列配置了一条线，用于提示“一行不要超过80列”，并可以在开启 =auto-fill-mode= 后作为一个提示。
 2. 我配置了属于我自己的新文件自动插入文件头功能，也定义了自己的 yasnippet 模板文件。
 3. 本配置大多倾向于C语言。
 4. 制作了个“插件”： F5（可自定义by customize-option local-open-files-key1）在右侧新建一个window或者用 F6（自定义by customize-option local-open-files-key2） 在当前window 切换到buffer =*FileList*= 在其中显示文件列表（自定义by customize-option local-open-files-list）并询问打开哪个文件（文件前有编号），它在 =init-open-files.el= 文件里
-5. 在 =custom.el= 文件内有一些我的私人使用配置，删除就好
+5. 我提供的custom设置放置在 =lisp/init-custom.el= 文件内。
 
