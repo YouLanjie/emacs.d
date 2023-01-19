@@ -15,16 +15,30 @@
 (require 'init-custom)
 ;; 读取分发出去的custom设置
 
+;; 加载模块
 
-(require 'init-packages)
-(require 'init-ui)
+;; 设置类
+;; 默认设置
 (require 'init-better-defaults)
+;; UI
+(require 'init-ui)
+;; 按键
 (require 'init-keybindings)
+;; Org-mode
 (require 'init-org)
+;; 插件
+(require 'init-packages)
+
+;; 自己编写的“插件”
+;; 自动插入
 (require 'init-auto-insert)
+;; 快速输入
 (require 'init-quickly-input-c)
+;; 自动保存
 (require 'init-auto-save)
+;; 打开文件
 (require 'init-open-files)
-; 加载模块
+;; 切换透明度
+(require 'init-loop-alpha)
 
 ;;; init.el ends here
