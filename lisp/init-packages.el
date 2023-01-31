@@ -135,6 +135,8 @@
 ;  :init (global-undo-tree-mode))
 ;  :config  (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/.cache/undo/")))
 ; git管理工具
+(use-package window-numbering
+  :init (window-numbering-mode))
 (use-package magit
   :ensure t)
 (use-package org

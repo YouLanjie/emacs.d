@@ -18,16 +18,16 @@
 ;; 加载模块
 
 ;; 设置类
-;; 默认设置
-(require 'init-better-defaults)
+;; 插件
+(require 'init-packages)
 ;; UI
 (require 'init-ui)
+;; 默认设置
+(require 'init-better-defaults)
 ;; 按键
 (require 'init-keybindings)
 ;; Org-mode
 (require 'init-org)
-;; 插件
-(require 'init-packages)
 
 ;; 自己编写的“插件”
 ;; 自动插入
