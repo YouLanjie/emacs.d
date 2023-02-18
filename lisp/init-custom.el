@@ -32,7 +32,7 @@
  ;; 打开文件快捷键启用设置
  ;; '(local-open-files-enable t)
  ;; Org-mode 的导出设置
- '(org-export-backends '(ascii html man md odt texinfo groff))
+ '(org-export-backends '(ascii html latex man md texinfo))
  ;; 不折行
  '(truncate-lines t))
 
