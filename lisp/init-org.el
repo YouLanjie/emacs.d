@@ -8,10 +8,23 @@
 (add-hook 'org-mode-hook
 	  (lambda ()
 	    (command-execute 'org-indent-mode)
-	    (local-set-key (kbd "C-c a") 'org-agenda)))
+	    (local-set-key (kbd "C-c a") 'org-agenda)
+	    (define-key evil-normal-state-map
+	      (kbd "TAB")
+	      'org-cycle)
+	    ))
 
-;; 加入到日程列表里
-;(setq org-agenda-files (list "~/org-mode/GTD.org"))
+;; 在中文中即使不留空格，也会将目标字符串等宽强调
+;;(setq org-emphasis-regexp-components
+      ;; add multibyte char at pre and post For chinese
+      ;;'("-[:space:][:multibyte:]('\"{" "-[:space:][:multibyte:].,:!?;'\")}\\[" "[:space:]" "." 1))
+;; (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+
+;; Non-nil means interpret "_" and "^" for display.
+;; 适用于导出
+(setq org-export-with-sub-superscripts '{})
+;; 适用于org-mode中渲染
+(setq org-use-sub-superscripts '{})
 
 ;;key for initialize file
 

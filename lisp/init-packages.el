@@ -95,11 +95,13 @@
   :ensure t
   :after yasnippet)
 ; 针对org-mode符号的美化（因字体问题取消）
-;(use-package org-bullets
-;  :custom
-;  (org-bullets-bullet-list '("◉" "○""✸" "✿" "✜" "◆""▶"))
-;  (org-ellipsis "⤵")
-;  :hook (org-mode . org-bullets-mode))
+(use-package org-bullets
+  ; :custom
+  ; (org-bullets-bullet-list '("◉" "○""✸" "✿" "✜" "◆""▶"))
+  ; (org-ellipsis "⤵")
+  :hook (org-mode . org-bullets-mode))
+;; 命令输入
+(use-package smex)
 ; 语法检查，比vim的好
 (use-package flycheck
   :ensure t
@@ -127,24 +129,22 @@
   :config
     (setq lsp-completion-provider :none) ;; 阻止 lsp 重新设置 company-backend 而覆盖我们 yasnippet 的设置
     (setq lsp-headerline-breadcrumb-enable t))
+; git管理工具
+(use-package magit
+  :ensure t)
+(use-package window-numbering
+  :init (window-numbering-mode))
+(use-package valign
+  :ensure t
+  :init (require 'valign)
+  :hook (org-mode-hook . valign-mode))
 ;; Org图表绘图
-(use-package gnuplot)
+;(use-package gnuplot)
 ; Undo tree解决emacs的撤回痛点（卡顿大）
 ;(use-package undo-tree
 ;  :ensure t
 ;  :init (global-undo-tree-mode))
 ;  :config  (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/.cache/undo/")))
-; git管理工具
-(use-package window-numbering
-  :init (window-numbering-mode))
-(use-package magit
-  :ensure t)
-(use-package org
-  :ensure t)
-(use-package valign
-  :ensure t
-  :init (require 'valign)
-  :hook (org-mode-hook . valign-mode))
 
 (provide 'init-packages)
 
