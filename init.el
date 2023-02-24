@@ -28,12 +28,12 @@
 (require 'init-keybindings)
 ;; Org-mode
 (require 'init-org)
-
-;; 自己编写的“插件”
 ;; 自动插入
 (require 'init-auto-insert)
 ;; 快速输入
 (require 'init-quickly-input-c)
+
+;; 自己编写的“插件”
 ;; 自动保存
 (require 'init-auto-save)
 ;; 打开文件

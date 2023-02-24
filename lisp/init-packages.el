@@ -39,12 +39,12 @@
   (setq sml/theme 'respectful)
   (sml/setup))
 ; 像vim一样平滑的滚动
-(use-package smooth-scrolling
-  :init (smooth-scrolling-mode)
-  :config
-  (setq scroll-margin 3
-	scroll-conservatively 9999
-	scroll-step 1))
+;; (use-package smooth-scrolling
+;;   :init (smooth-scrolling-mode)
+;;   :config
+;;   (setq scroll-margin 3
+;; 	scroll-conservatively 9999
+;; 	scroll-step 1))
 ; 使用像vim一样的Powerline（状态栏）
 (use-package powerline-evil
   :init

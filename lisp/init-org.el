@@ -26,6 +26,12 @@
 ;; 适用于org-mode中渲染
 (setq org-use-sub-superscripts '{})
 
+(setq org-latex-pdf-process
+	'("xelatex %f"
+	  "rm -fr %b.out %b.log %b.brf %b.bbl auto"
+	  ))
+(setq org-latex-compiler "xelatex")
+
 ;;key for initialize file
 
 (provide 'init-org)
