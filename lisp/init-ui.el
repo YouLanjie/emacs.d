@@ -61,7 +61,7 @@
 (add-hook 'after-init-hook
 	  (lambda ()
 	    (if local-fonts
-		(lambda ()
+		(progn
 		  (set-face-attribute 'default nil :font "JetBrains Mono")
 		  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "JetBrains Mono" :size 18 :weight 'bold))
 		  (set-fontset-font t 'unicode (font-spec :family "AR PL UMing CN" :size 22))
