@@ -59,12 +59,13 @@
 ; (set-face-attribute 'default nil :font "AR PL KaitiM GB")
 ;; 字体设置（请改成自己使用的）
 (add-hook 'after-init-hook
-	  (if local-fonts
-	      (lambda ()
-		(set-face-attribute 'default nil :font "JetBrains Mono")
-		(set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "JetBrains Mono" :size 18 :weight 'bold))
-		(set-fontset-font t 'unicode (font-spec :family "AR PL UMing CN" :size 22))
-		)))
+	  (lambda ()
+	    (if local-fonts
+		(lambda ()
+		  (set-face-attribute 'default nil :font "JetBrains Mono")
+		  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "JetBrains Mono" :size 18 :weight 'bold))
+		  (set-fontset-font t 'unicode (font-spec :family "AR PL UMing CN" :size 22))
+		  ))))
 
 (provide 'init-ui)
 
