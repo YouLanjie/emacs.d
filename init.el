@@ -12,7 +12,7 @@
 
 ;; 加载模块
 
-;; 设定源码加载路径
+;; 设定(添加)源码加载路径
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (let ((gc-cons-threshold most-positive-fixnum)

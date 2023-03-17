@@ -28,18 +28,22 @@
 (defgroup local-loop-alpha nil
   "循环切换窗口透明度."
   :group 'local-loop-alpha)
+
 (defcustom local-loop-alpha-enable nil
   "启动开关."
   :type 'boolean
   :group 'local-loop-alpha)
+
 (defcustom local-loop-alpha-key "<f7>"
   "切换快捷键."
   :type 'string
   :group 'local-loop-alpha)
+
 (defcustom local-loop-alpha-list '((100 100) (90 65) (85 55) (75 45) (65 35))
   "切换透明度列表."
   :type 'list
   :group 'local-loop-alpha)
+
 (if local-loop-alpha-enable
     (progn
       (defun loop-alpha ()

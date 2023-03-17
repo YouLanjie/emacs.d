@@ -26,17 +26,19 @@
 
 (load-theme 'atom-one-dark t)
 ; 加载主题
-(setq inhibit-startup-message t)
+(setq-default inhibit-startup-message t)
 ; 关闭启动 Emacs 时的欢迎界面
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 ; 关闭 Tool bar and Menu bar
 
-(display-time-mode 1)
+(display-time-mode t)
 ;; 状态栏常显时间
-;(setq display-time-24hr-format t)
+
+;; (setq-default display-time-24hr-format t)
 ;; 格式
+
 (setq display-time-day-and-date t)
 ;; 显示时间、星期、日期
 
@@ -51,13 +53,19 @@
 (setq gc-cons-threshold most-positive-fixnum)
 (set-face-attribute 'default nil :height 140)
 
+;; 字体设置(以下全部)（请改成自己使用的）
+(defgroup local-fonts nil
+  "只是为了满足报错需要."
+  :group 'local-fonts)
+
 (defcustom local-fonts nil
   "GUI使用我个人的字体设置."
-  :type 'boolean)
+  :type 'boolean
+  :group 'local-fonts)
 
-;(set-default-font "JetBrains Mono 14")
-; (set-face-attribute 'default nil :font "AR PL KaitiM GB")
-;; 字体设置（请改成自己使用的）
+;; (set-default-font "JetBrains Mono 14")
+;; (set-face-attribute 'default nil :font "AR PL KaitiM GB")
+
 (add-hook 'after-init-hook
 	  (lambda ()
 	    (if local-fonts

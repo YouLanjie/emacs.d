@@ -23,22 +23,28 @@
 
 ;;; Code:
 
-;;设置 auto-insert 模版文件存放目录
-(setq-default auto-insert-directory "~/.emacs.d/auto-insert/")
-;;; 启用auto-insert
-(auto-insert-mode)
-;; 默认情况下插入模版前会循问你要不要自动插入，这里设置为不必询问，
-(setq auto-insert-query nil)
+(setq-default auto-insert-directory "~/.emacs.d/auto-insert/"
+	      ;;设置 auto-insert 模版文件存放目录
+	      auto-insert-query nil
+	      ;; 默认情况下插入模版前会循问你要不要自动插入，这里设置为不必询问
+	      )
+
+(auto-insert-mode t)
+;; 启用auto-insert
+
 (defun autoinsert-yas-expand()
   "Replace text in yasnippet template."
   (yas-expand-snippet (buffer-string) (point-min) (point-max)))
+
 (defun autoinsert-setting()
   "设置要插入的文件."
   (define-auto-insert "\\.sh" [ "insert-sh" autoinsert-yas-expand])
   (define-auto-insert "\\.h" [ "insert-c-head" autoinsert-yas-expand])
   (define-auto-insert '("\\.c\\'" . "C skeleton") [ "insert-c" autoinsert-yas-expand]))
-;;这个就是新建以.c 结尾的C文件时，会自动插入c-auto-insert文件中的内容
-;(define-auto-insert "\\.c" [ "auto-insert-c.c"])
+
+;; (define-auto-insert "\\.c" [ "auto-insert-c.c"])
+;; 这个就是新建以.c 结尾的C文件时，会自动插入c-auto-insert文件中的内容
+
 (eval-after-load 'autoinsert '(autoinsert-setting))
 
 

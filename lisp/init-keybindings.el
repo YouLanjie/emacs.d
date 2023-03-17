@@ -7,6 +7,7 @@
   (lambda ()
     (interactive)
     (forward-line 20)))
+
 (define-key evil-normal-state-map
   (kbd "C-k")
   (lambda ()
