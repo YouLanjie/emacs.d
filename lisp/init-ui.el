@@ -24,8 +24,6 @@
 
 ;;; Code:
 
-(load-theme 'atom-one-dark t)
-; 加载主题
 (setq-default inhibit-startup-message t)
 ; 关闭启动 Emacs 时的欢迎界面
 

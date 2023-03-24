@@ -23,10 +23,13 @@
 (eval-when-compile
   (require 'use-package))
 ;; 主题
-(use-package atom-one-dark-theme)
+;; (use-package atom-one-dark-theme
+;;   ;; 加载主题
+;;   :init (load-theme 'atom-one-dark t))
+(use-package monokai-theme
+  :init (load-theme 'monokai))
 ;; 开启evil模式 -- 使用vim键位
 (use-package evil
-  :ensure t
   :init (evil-mode))
 ;; 启动速度检查
 (use-package benchmark-init
@@ -34,7 +37,6 @@
   :hook (after-init . benchmark-init/deactivate))
 ;; 更好的状态栏
 (use-package smart-mode-line
-  :ensure t
   :init
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'respectful)
@@ -48,11 +50,9 @@
   (display-time-mode t))
 ;; 显示可用键位
 (use-package which-key
-  :ensure t
   :init (which-key-mode))
 ;; 自动补全
 (use-package company
-  :ensure t
   :init (global-company-mode)
   :config
   (setq company-minimum-prefix-length 1) ; 只需敲 1 个字母就开始进行自动补全
@@ -63,7 +63,6 @@
   (setq company-transformers '(company-sort-by-occurrence))) ; 根据选择的频率进行排序，读者如果不喜欢可以去掉
 ;; 补全模板
 (use-package yasnippet
-  :ensure t
   :init
   (yas-global-mode 1)
   :hook
@@ -86,7 +85,6 @@
   (:map yas-minor-mode-map ("S-<tab>" . yas-expand)))
 ;; 默认补全模板
 (use-package yasnippet-snippets
-  :ensure t
   :after yasnippet)
 ;; 针对org-mode符号的美化（因字体问题取消）
 (use-package org-bullets
@@ -98,13 +96,11 @@
 ;; (use-package smex)
 ;; 语法检查，比vim的好
 (use-package flycheck
-  :ensure t
   :config
   (setq truncate-lines nil) ; 如果单行信息很长会自动换行
   :hook
   (prog-mode . flycheck-mode))
 (use-package flycheck-clang-analyzer
-  :ensure t
   :after flycheck
   :config
   (setq flycheck-clang-analyzer-executable "clang")
@@ -112,7 +108,6 @@
   (c-mode . flycheck-clang-analyzer-setup))
 ;; LSP语法解析
 (use-package lsp-mode
-  :ensure t
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l"
@@ -123,15 +118,40 @@
   :config
     (setq lsp-completion-provider :none) ;; 阻止 lsp 重新设置 company-backend 而覆盖我们 yasnippet 的设置
     (setq lsp-headerline-breadcrumb-enable t))
+;; 项目管理插件
+(use-package projectile
+  ;; 全局 enable 这个 minor mode
+  :init (projectile-mode 1)
+  :config
+  ;; 把它的缓存挪到 ~/.emacs.d/.cache/ 文件夹下，让 gitignore 好做
+  (setq projectile-cache-file (expand-file-name ".cache/projectile.cache" user-emacs-directory))
+  ;; 定义和它有关的功能的 leader key
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 ;; git管理工具
-(use-package magit
-  :ensure t)
+(use-package magit)
+;; 窗口数字编号
 (use-package window-numbering
   :init (window-numbering-mode))
+;; Org表格对齐
 (use-package valign
   :ensure t
   :init (require 'valign)
   :hook (org-mode-hook . valign-mode))
+;; (use-package pyim
+;;   :config
+;;   ;; 加载 basedict 拼音词库。
+;;   (pyim-basedict-enable)
+;;   ;; 将 Emacs 默认输入法设置为 pyim.
+;;   (setq default-input-method "pyim")
+;;   ;; 显示 5 个候选词。
+;;   (setq pyim-page-length 5)
+;;   ;; 金手指设置，可以将光标处的编码（比如：拼音字符串）转换为中文。
+;;   (global-set-key (kbd "M-j") 'pyim-convert-string-at-point)
+;;   ;; 设置 pyim 默认使用的输入法策略，我使用全拼。
+;;   (pyim-default-scheme 'quanpin)
+;;   ;; 开启代码搜索中文功能（比如拼音，五笔码等）
+;;   (pyim-isearch-mode 1)
+;;   )
 
 ;; 像vim一样平滑的滚动
 ;; (use-package smooth-scrolling
