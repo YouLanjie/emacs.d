@@ -19,6 +19,7 @@
       (file-name-handler-alist nil))
   ;; 读取分离出去的custom设置
   (require 'init-custom)
+  (load custom-file 'no-error 'no-message)
 
   ;; 设置类
   ;; 插件
