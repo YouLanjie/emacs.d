@@ -134,9 +134,27 @@
   :init (window-numbering-mode))
 ;; Org表格对齐
 (use-package valign
-  :ensure t
   :init (require 'valign)
   :hook (org-mode-hook . valign-mode))
+;; 类Vim的折叠
+(use-package vimish-fold
+  :init (vimish-fold-global-mode 1)
+  :config
+  (global-set-key (kbd "C-c f f") 'vimish-fold)
+  (global-set-key (kbd "C-c f u") 'vimish-fold-unfold)
+  (global-set-key (kbd "C-c f d") 'vimish-fold-delete)
+  (global-set-key (kbd "C-c f t") 'vimish-fold-toggle)
+  (defun fold-function ()
+    "自动折叠."
+    (interactive)
+    (search-backward-regexp "^{")
+    (forward-line -1)
+    (evil-visual-line)
+    (search-forward-regexp "^}"))
+  (global-set-key (kbd "C-c f F") 'fold-function)
+  )
+;; Org html代码高亮
+(use-package htmlize)
 ;; (use-package pyim
 ;;   :config
 ;;   ;; 加载 basedict 拼音词库。

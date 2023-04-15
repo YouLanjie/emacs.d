@@ -26,7 +26,7 @@
 
 (add-hook
  'c-mode-hook
- '(lambda ()
+ (lambda ()
     "设置C语言的补全插入功能"
 
     ;; 设置C-c l为注释按键
