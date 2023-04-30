@@ -144,13 +144,8 @@
   (global-set-key (kbd "C-c f u") 'vimish-fold-unfold)
   (global-set-key (kbd "C-c f d") 'vimish-fold-delete)
   (global-set-key (kbd "C-c f t") 'vimish-fold-toggle)
-  (defun fold-function ()
-    "自动折叠."
-    (interactive)
-    (search-backward-regexp "^{")
-    (forward-line -1)
-    (evil-visual-line)
-    (search-forward-regexp "^}"))
+  (fset 'fold-function
+	(kmacro-lambda-form [?? ?^ ?\{ return ?k ?V ?/ ?^ ?\} return ?\M-x ?v ?i ?m ?i ?s ?h ?- ?f ?o ?l ?d return] 0 "%d"))
   (global-set-key (kbd "C-c f F") 'fold-function)
   )
 ;; Org html代码高亮

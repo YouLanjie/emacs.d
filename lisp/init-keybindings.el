@@ -2,17 +2,21 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'evil)
+
+(fset 'next-lines
+   (kmacro-lambda-form [?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j ?j] 0 "%d"))
+
 (define-key evil-normal-state-map
   (kbd "C-j")
-  (lambda ()
-    (interactive)
-    (forward-line 20)))
+  'next-lines)
+
+(fset 'previous-lines
+   (kmacro-lambda-form [?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k ?k] 0 "%d"))
 
 (define-key evil-normal-state-map
   (kbd "C-k")
-  (lambda ()
-    (interactive)
-    (forward-line -20)))
+  'previous-lines)
 
 (provide 'init-keybindings)
 
