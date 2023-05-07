@@ -30,7 +30,7 @@
 	  (progn
 	    (show-paren-mode t)
 	    ;; 编程模式下，光标在括号上时高亮另一个括号
-	    ;; (indent-tabs-mode t)
+	    (indent-tabs-mode 1)
 	    ;; 使用Tab键缩进
 	    ))
 (add-hook 'prog-mode-hook 'hs-minor-mode)

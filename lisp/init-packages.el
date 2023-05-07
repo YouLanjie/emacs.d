@@ -93,7 +93,13 @@
   ; (org-ellipsis "⤵")
   :hook (org-mode . org-bullets-mode))
 ;; 命令输入
-;; (use-package smex)
+(use-package smex
+  :init
+  (smex-initialize)
+  :bind
+  ("M-x" . smex)
+  ("M-X" . smex-major-mode-commands)
+  ("C-c C-c M-x" . execute-extended-command))
 ;; 语法检查，比vim的好
 (use-package flycheck
   :config
@@ -128,7 +134,9 @@
   ;; 定义和它有关的功能的 leader key
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 ;; git管理工具
-(use-package magit)
+(use-package magit
+  :bind
+  ("C-c m" . magit))
 ;; 窗口数字编号
 (use-package window-numbering
   :init (window-numbering-mode))
