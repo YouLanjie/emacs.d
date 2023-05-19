@@ -148,13 +148,13 @@
 (use-package vimish-fold
   :init (vimish-fold-global-mode 1)
   :config
-  (global-set-key (kbd "C-c f f") 'vimish-fold)
-  (global-set-key (kbd "C-c f u") 'vimish-fold-unfold)
-  (global-set-key (kbd "C-c f d") 'vimish-fold-delete)
-  (global-set-key (kbd "C-c f t") 'vimish-fold-toggle)
+  (global-set-key (kbd "C-c F f") 'vimish-fold)
+  (global-set-key (kbd "C-c F u") 'vimish-fold-unfold)
+  (global-set-key (kbd "C-c F d") 'vimish-fold-delete)
+  (global-set-key (kbd "C-c F t") 'vimish-fold-toggle)
   (fset 'fold-function
 	(kmacro-lambda-form [?? ?^ ?\{ return ?k ?V ?/ ?^ ?\} return ?\M-x ?v ?i ?m ?i ?s ?h ?- ?f ?o ?l ?d return] 0 "%d"))
-  (global-set-key (kbd "C-c f F") 'fold-function)
+  (global-set-key (kbd "C-c F F") 'fold-function)
   )
 ;; Org html代码高亮
 (use-package htmlize)

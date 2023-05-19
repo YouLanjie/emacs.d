@@ -27,13 +27,16 @@
 
 ;; 专注于编程
 (add-hook 'prog-mode-hook
-	  (progn
+	  (lambda ()
 	    (show-paren-mode t)
 	    ;; 编程模式下，光标在括号上时高亮另一个括号
 	    (indent-tabs-mode 1)
 	    ;; 使用Tab键缩进
+	    (hs-minor-mode 1)
+	    ;; 启动代码缩进
+	    (global-set-key (kbd "C-c f") 'hs-toggle-hiding)
+	    ;; 设置快捷键
 	    ))
-(add-hook 'prog-mode-hook 'hs-minor-mode)
 ;; 编程模式下，可以折叠代码块
 
 ;; 设置变量类
