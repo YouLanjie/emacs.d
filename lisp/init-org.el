@@ -5,6 +5,7 @@
 ;; 设置 Org Agenda 快捷键
 ;(if (string= major-mode "org-mode") (message "This is org-mode!"))
 ;(if (string= major-mode "org-mode") (global-set-key (kbd "C-c a") 'org-agenda))
+(require 'evil)
 (add-hook 'org-mode-hook
 	  (lambda ()
 	    (command-execute 'org-indent-mode)
@@ -12,6 +13,7 @@
 	    (define-key evil-normal-state-map
 	      (kbd "TAB")
 	      'org-cycle)
+	    (auto-fill-mode 1)
 	    ))
 
 ;; 在中文中即使不留空格，也会将目标字符串等宽强调

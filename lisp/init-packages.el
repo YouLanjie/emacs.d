@@ -5,10 +5,9 @@
 ;; 添加仓库
 (require 'package)
 ;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(setq package-archives '(
-  ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-  ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-  ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+(setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                         ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -36,18 +35,22 @@
   :init (benchmark-init/activate)
   :hook (after-init . benchmark-init/deactivate))
 ;; 更好的状态栏
-(use-package smart-mode-line
-  :init
-  (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'respectful)
-  (sml/setup))
+;; (use-package smart-mode-line
+;;   :init
+;;   (setq sml/no-confirm-load-theme t)
+;;   (setq sml/theme 'respectful)
+;;   (sml/setup))
 ;; 使用像vim一样的Powerline（状态栏）
 (use-package powerline-evil
   :init
   (powerline-evil-vim-color-theme)
+  ;; (powerline-default-theme)
   :config
-  (require 'powerline)
-  (display-time-mode t))
+  (require 'powerline))
+;; Powerline
+;; (use-package powerline
+;;   :init
+;;   (powerline-default-theme))
 ;; 显示可用键位
 (use-package which-key
   :init (which-key-mode))
@@ -158,6 +161,13 @@
   )
 ;; Org html代码高亮
 (use-package htmlize)
+;; 可视化Undo功能
+(use-package vundo
+  :bind ("C-x u" . vundo))
+;;  Undo tree解决emacs的撤回痛点（卡顿大）
+;; (use-package undo-tree
+;;   :init (global-undo-tree-mode)
+;;   :config  (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/.cache/undo/"))))
 ;; (use-package pyim
 ;;   :config
 ;;   ;; 加载 basedict 拼音词库。
@@ -184,11 +194,6 @@
 
 ;; Org图表绘图
 ;; (use-package gnuplot)
-;;  Undo tree解决emacs的撤回痛点（卡顿大）
-;; (use-package undo-tree
-;;   :ensure t
-;;   :init (global-undo-tree-mode))
-;;   :config  (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/.cache/undo/")))
 
 (provide 'init-packages)
 

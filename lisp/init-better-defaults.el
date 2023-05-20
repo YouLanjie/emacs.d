@@ -9,8 +9,8 @@
 	    ;; 记忆文件上次打开的位置
 	    (electric-pair-mode t)
 	    ;; 自动补全括号
-	    (column-number-mode t)
-	    ;; 在 Mode line 上显示列号
+	    ;; (column-number-mode t)
+	    ;; 在默认状态栏上显示列号
 	    (global-auto-revert-mode t)
 	    ;; 当另一程序修改了文件时，让 Emacs 及时刷新 Buffer
 	    (delete-selection-mode t)
