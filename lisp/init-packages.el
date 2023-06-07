@@ -41,16 +41,19 @@
 ;;   (setq sml/theme 'respectful)
 ;;   (sml/setup))
 ;; 使用像vim一样的Powerline（状态栏）
-(use-package powerline-evil
-  :init
-  (powerline-evil-vim-color-theme)
-  ;; (powerline-default-theme)
-  :config
-  (require 'powerline))
+;; (use-package powerline-evil
+;;   :init
+;;   (powerline-evil-vim-color-theme)
+;;   ;; (powerline-default-theme)
+;;   :config
+;;   (require 'powerline))
 ;; Powerline
 ;; (use-package powerline
 ;;   :init
 ;;   (powerline-default-theme))
+;; 其他状态栏
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
 ;; 显示可用键位
 (use-package which-key
   :init (which-key-mode))

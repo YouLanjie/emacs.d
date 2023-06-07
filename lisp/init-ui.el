@@ -29,7 +29,10 @@
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-; 关闭 Tool bar and Menu bar
+;; 关闭 Tool bar and Menu bar
+
+(size-indication-mode t)
+;; 状态栏显示文件大小
 
 (display-time-mode t)
 ;; 状态栏常显时间
@@ -41,12 +44,12 @@
 ;; 显示时间、星期、日期
 
 (add-to-list 'default-frame-alist '(width . 80))
-; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
+;; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 24))
-; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+;; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
 
 (when (display-graphic-p) (toggle-scroll-bar -1))
-; 图形界面时关闭滚动条
+;; 图形界面时关闭滚动条
 
 (setq gc-cons-threshold most-positive-fixnum)
 (set-face-attribute 'default nil :height 140)

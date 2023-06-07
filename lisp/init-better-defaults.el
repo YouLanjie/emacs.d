@@ -5,6 +5,8 @@
 ;; 模式类
 (add-hook 'after-init-hook
 	  (progn
+	    (ido-mode 1)
+	    ;; 在C-x C-f和其他操作中遍历补全列表
 	    (save-place-mode t)
 	    ;; 记忆文件上次打开的位置
 	    (electric-pair-mode t)
